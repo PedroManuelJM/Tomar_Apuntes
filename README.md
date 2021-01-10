@@ -22,6 +22,12 @@ La siguiente aplicación tiene las siguientes funcionalidades:
 
 ![py5](https://user-images.githubusercontent.com/71619972/104112130-f868a600-52b8-11eb-84b1-2e8d92cc04da.PNG)
 
+
+Para poder ejecutar la aplicación ,poner en el terminal : App.py
+
 * CÓDIGO DE LA BASE DE DATOS
 
 ![py6](https://user-images.githubusercontent.com/71619972/104112599-b80c2680-52be-11eb-871b-53ea8ba5392c.PNG)
+
+
+
