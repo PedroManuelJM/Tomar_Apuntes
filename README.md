@@ -1,11 +1,9 @@
 # Tomar_Apuntes
-Primero debes instalar las siguientes librerias:
+Primero debes instalar las siguientes librerias , para poder así conectarse con el gestor de base de datos :
 
 pip install flask
 
 pip install flask-mysqldb
-
-Para poder así conectarse con el gestor de base de datos.
 
 La siguiente aplicación tiene las siguientes funcionalidades:
 
@@ -26,3 +24,4 @@ La siguiente aplicación tiene las siguientes funcionalidades:
 
 * CÓDIGO DE LA BASE DE DATOS
 
+![py6](https://user-images.githubusercontent.com/71619972/104112599-b80c2680-52be-11eb-871b-53ea8ba5392c.PNG)
