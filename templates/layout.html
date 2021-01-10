@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FLASK CRUD</title>
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- BOOSTRAP 4 -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos-->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/dataTables.min.css')}}">
+</head>
+
+<body>
+
+  <!-- NAVIGATION  -->
+
+  <header>
+    <nav id="menu" class=" navbar  navbar-expand-lg fixed-top">
+      -- Apuntes Rápidos ---
+      <ul>
+        <li><a href="/"><i class="fa fa-home" style="font-size: 24px;"></i></a></li>
+        <li><a href="/categoria">Categoria</a></li>
+        <li><a href="/listanotas">Mis Apuntes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container ">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+  
+  <!--JQUERY -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- bootstrap--> 
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+   <!-- Datatable --> 
+  <script src="{{url_for('static', filename='js/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/dataTables.responsive.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/responsive.bootstrap4.min.js')}}"></script>
+  <!-- fin -->
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "language":{
+          "sProcessing":     "Procesando...",
+          "sLengthMenu":     "Mostrar _MENU_ registros",
+          "sZeroRecords":    "No se encontraron resultados",
+          "sEmptyTable":     "Ningún dato disponible en esta tabla",
+          "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+          "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+          "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+          "sInfoPostFix":    "",
+          "sSearch":         "Buscar:",
+          "sUrl":            "",
+          "sInfoThousands":  ",",
+          "sLoadingRecords": "Cargando...",
+          "lengthMenu": 'Mostrar <select>'+
+          '<option value="5">5</option>'+
+          '<option value="10">10</option>'+
+          '<option value="20">20</option>'+
+          '<option value="30">30</option>'+
+          '<option value="50">50</option>'+
+          '</select> registros',
+          "oPaginate": {
+            "sFirst":    "Primero",
+            "sLast":     "Último",
+            "sNext":     "Siguiente",
+            "sPrevious": "Anterior"
+          },
+          "oAria": {
+            "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+          }
+                }
+      });
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>

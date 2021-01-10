@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body" style="margin-top: 120px;">
+        <div class="card-header bg-success">
+            <h5>Editar Categoria</h5>
+        </div>
+
+        <form action="/update_categoria/{{categoria.0}}" method="POST"> 
+            <div class="form-group">
+                <br>
+                <label>Titulo nota </label>
+                <input type="text" name="nombrecategoria" placeholder="titulo nota" value="{{categoria.1}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Titulo nota </label>
+                <input type="text" name="descripcioncategoria" placeholder="titulo nota" value="{{categoria.2}}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">
+                    Actualizar
+               </button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %} 

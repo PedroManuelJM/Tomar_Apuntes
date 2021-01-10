@@ -1,0 +1,91 @@
+body{
+background: #2980b9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #2980b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* BARRA DE NAVEGACION */
+
+
+
+#menu {
+    font-family: 'Gugi', cursive;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #bac7c5, #5f7075);
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+  }
+  
+  #menu ul {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    list-style: none;
+  }
+  
+  #menu ul li {
+    display: inline;
+    padding-left: 10px;
+  }
+  
+  #menu ul li a {
+    color: #1d1d1d;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px 10px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  #menu ul li a:before, #menu ul li a:after {
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    content: '';
+    position: absolute;
+  }
+  
+  #menu ul li a:before {
+    top: -5px;
+    left: 0;
+  }
+  
+  #menu ul li a:after {
+    bottom: -5px;
+    right: 0;
+  }
+  
+  #menu ul li a:hover {
+    color: #EDEDED;
+  }
+  
+  #menu ul li a:hover:before, #menu ul li a:hover:after {
+    height: 10px;
+    width: 100%;
+  }
+  
+  #menu ul li a:hover:before {
+    border-top-color: #EDEDED;
+    border-right-color: #EDEDED;
+    -webkit-transition: width .4s ease-in-out, height .3s ease-in-out .3s;
+    transition: width .4s ease-in-out, height .3s ease-in-out .3s;
+  }
+  
+  #menu ul li a:hover:after {
+    border-bottom-color: #EDEDED;
+    border-left-color: #EDEDED;
+    -webkit-transition: width .4s ease-in-out, height .3s ease-in-out .3s;
+    transition: width .4s ease-in-out, height .3s ease-in-out .3s;
+  }

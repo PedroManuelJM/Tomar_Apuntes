@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="col-md-4 offset-md-4">
+    <div class="card card-body" style="margin-top: 120px;">
+        <div class="card-header bg-info">
+            <h5>Editar Apunte</h5>
+        </div>
+
+        <form action="/update/{{nota.0}}" method="POST"> 
+            <div class="form-group">
+                <br>
+                <label>Titulo nota </label>
+                <input type="text" name="titulo" placeholder="titulo nota" value="{{nota.1}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>URL </label>
+                <input type="text" name="url" placeholder="url"  value="{{nota.3}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Comentario </label>
+                <input type="text" name="comentario" placeholder="comentario" value="{{nota.4}}" class="form-control">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">
+                    Actualizar
+               </button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %} 

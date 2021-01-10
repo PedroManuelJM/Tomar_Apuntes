@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="card" style="margin-top: 80px;">
+  <div class="card-header">
+   <h5>Mis Apuntes</h5>
+  </div>
+  <div class="card-body" >
+    <table id="example1" class="table table-sm table-responsive table-bordered table-striped">
+        <thead class="table-info">
+            <tr class="text-center">
+              <th>ID</th>
+              <th>TITULO-NOTA</th>
+              <th>CATEGORIA</th>
+              <th>URL</th>
+              <th>COMENTARIO</th>
+              <th>LINK</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for nota in notas %}
+            <tr>
+                <td>{{nota.0}}</td>
+                <td>{{nota.1}}</td>
+                <td>{{nota.2}}</td>
+                <td>{{nota.3}}</td>
+                <td>{{nota.4}}</td>
+                <td class="text-center">
+                  <a href="{{nota.3}}" target="_blank"><i class="fa fa-link"></i></a>
+                  <a href="/edit_nota/{{nota.0}}"><i class="fa fa-edit" style="font-size: 18px;"></i></a>
+                </td>
+            </tr>
+        {% endfor %}         
+        </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+ 
+{% endblock %}

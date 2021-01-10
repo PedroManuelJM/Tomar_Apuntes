@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="row">
+   <div class="col-md-4" style="margin-top: 128px;">
+    {% with messages =get_flashed_messages() %}
+    {% if messages %}
+    {%  for message in messages %}  
+    
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
+      <div class="card card-body">
+        <form action="/add_nota" method="POST"> 
+          <label> Tomar Apunte </label>
+           <div class="form-group">
+             <input type="text" name="titulo" placeholder="Ingrese el titulo nota" class="form-control">
+           </div>
+           <div class="form-group">
+            
+              <select name="idcategoria"  class="form-control">
+                <option value=""> Seleccione la categoria </option>
+                {% for cat in categorias %}
+                <option value="{{cat.0}}">{{cat.1}}</option>
+                {% endfor %}
+              </select>
+              
+           </div>
+
+           <div class="form-group">
+             <input type="text" name="url" placeholder="Ingrese la url" class="form-control">
+           </div>
+           <div class="form-group">
+            <input type="text" name="comentario" placeholder=" Ingrese comentario" class="form-control">
+           </div>
+           <div class="form-group">
+             <button type="submit" class="btn btn-primary btn-block">
+                Guardar
+             </button>
+           </div> 
+          
+           
+        </form>
+      </div>
+   </div>
+   <div class="col-md-2">
+
+   </div>
+  <div class="col-md-6">
+    <div class="list-group" style="margin-top: 120px;">
+      {% for nota in notas %}
+      <a href="{{nota.3}}" target="_blank" class="list-group-item list-group-item-action flex-column align-items-start ">
+        <i class="fa fa-tag"></i> Ir al Link
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-2">Titulo Nota : {{nota.1}} </h5>
+          <span class="badge badge-primary badge-pill"> {{nota.0}} </span>
+        </div>
+        Comentario : </br>
+        <p class="mb-1">{{nota.4}}</p>
+        Categoria : <h5 class="mb-2 badge badge-success" style="font-size: 14px;">{{nota.2}} </h5>
+      </a>
+  
+      <a href="/edit_nota/{{nota.0}}" class="btn btn-warning"><i class="fa fa-edit" style="font-size: 24px;"></i></a>
+      <a href="/delete/{{nota.0}}" class="btn btn-danger btn-delete" style="font-size: 24px;"> <i
+          class="fa fa-trash"></i></a>
+      <br>
+  
+  
+      {% endfor %}
+  
+    </div>
+  </div>
+{% endblock %}
